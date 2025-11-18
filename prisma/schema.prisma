@@ -8,8 +8,8 @@ datasource db {
 }
 
 model User {
-  id           Int      @id @default(autoincrement())
-  username     String   @unique
+  id           Int          @id @default(autoincrement())
+  username     String       @unique
   passwordHash String
   keyMaterial  String
   accounts     Account[]
@@ -17,12 +17,12 @@ model User {
 }
 
 model Account {
-  id         Int    @id @default(autoincrement())
-  userId     Int
-  name       String
-  encBalance Json
-  user       User   @relation(fields: [userId], references: [id])
-  transactions Transaction[]
+  id           Int          @id @default(autoincrement())
+  userId       Int
+  name         String
+  encBalance   Json
+  user         User         @relation(fields: [userId], references: [id])
+  transactions Transaction[]   // 👈 opposite relation added here
 }
 
 model Transaction {
