@@ -1,0 +1,61 @@
+{
+  "info": {
+    "name": "Dashboard Backend",
+    "_postman_id": "12345678-abcd-efgh-ijkl-987654321000",
+    "description": "Collection to test the deployed backend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dashboard-backend-5cc6.onrender.com/api/health",
+          "protocol": "https",
+          "host": ["dashboard-backend-5cc6", "onrender", "com"],
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"mypassword\"\n}"
+        },
+        "url": {
+          "raw": "https://dashboard-backend-5cc6.onrender.com/api/register",
+          "protocol": "https",
+          "host": ["dashboard-backend-5cc6", "onrender", "com"],
+          "path": ["api", "register"]
+        }
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"mypassword\"\n}"
+        },
+        "url": {
+          "raw": "https://dashboard-backend-5cc6.onrender.com/api/login",
+          "protocol": "https",
+          "host": ["dashboard-backend-5cc6", "onrender", "com"],
+          "path": ["api", "login"]
+        }
+      }
+    }
+  ]
+}
