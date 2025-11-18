@@ -1,8 +1,8 @@
 {
   "info": {
-    "name": "Dashboard Backend",
-    "_postman_id": "12345678-abcd-efgh-ijkl-987654321000",
-    "description": "Collection to test the deployed backend API",
+    "name": "Dashboard Backend API",
+    "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+    "description": "Collection for testing your Render backend",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -23,9 +23,7 @@
       "name": "Register User",
       "request": {
         "method": "POST",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
         "body": {
           "mode": "raw",
           "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"mypassword\"\n}"
@@ -42,9 +40,7 @@
       "name": "Login User",
       "request": {
         "method": "POST",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
         "body": {
           "mode": "raw",
           "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"mypassword\"\n}"
@@ -54,6 +50,21 @@
           "protocol": "https",
           "host": ["dashboard-backend-5cc6", "onrender", "com"],
           "path": ["api", "login"]
+        }
+      }
+    },
+    {
+      "name": "Get Accounts",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{jwtToken}}" }
+        ],
+        "url": {
+          "raw": "https://dashboard-backend-5cc6.onrender.com/api/accounts",
+          "protocol": "https",
+          "host": ["dashboard-backend-5cc6", "onrender", "com"],
+          "path": ["api", "accounts"]
         }
       }
     }
