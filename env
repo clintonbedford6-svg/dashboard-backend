@@ -1,0 +1,2 @@
+DATABASE_URL=postgresql://postgres:JPq6fCyqYNaV4ghx@db.bphswvejawajkceavemd.supabase.co:5432/postgres?sslmode=require
+PORT=4000
