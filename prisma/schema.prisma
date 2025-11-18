@@ -22,6 +22,7 @@ model Account {
   name       String
   encBalance Json
   user       User   @relation(fields: [userId], references: [id])
+  transactions Transaction[]
 }
 
 model Transaction {
@@ -33,6 +34,7 @@ model Transaction {
   description      String
   encAmount        Json
   encBalanceAfter  Json
-  user             User     @relation(fields: [userId], references: [id])
-  account          Account  @relation(fields: [accountId], references: [id])
+
+  user    User    @relation(fields: [userId], references: [id])
+  account Account @relation(fields: [accountId], references: [id])
 }
